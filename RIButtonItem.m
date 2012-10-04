@@ -12,17 +12,22 @@
 @synthesize label;
 @synthesize action;
 
+- (id) initWithLabel:(NSString*)inLabel {
+    if (self = [super init]) {
+        [self setLabel:inLabel];
+    }
+    return self;
+}
+
 +(id)item
 {
-    return [self new];
+    return [[[RIButtonItem alloc] init] autorelease];
 }
 
 +(id)itemWithLabel:(NSString *)inLabel
 {
-    id newItem = [self item];
-    [newItem setLabel:inLabel];
+    id newItem = [[[RIButtonItem alloc] initWithLabel:inLabel] autorelease];
     return newItem;
 }
 
 @end
-
