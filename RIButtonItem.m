@@ -19,6 +19,11 @@
     return self;
 }
 
+-(void)dealloc {
+    [action release];
+    [super dealloc];
+}
+
 +(id)item
 {
     return [[[RIButtonItem alloc] init] autorelease];
@@ -29,5 +34,6 @@
     id newItem = [[[RIButtonItem alloc] initWithLabel:inLabel] autorelease];
     return newItem;
 }
+
 
 @end
