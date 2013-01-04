@@ -19,19 +19,15 @@
     return self;
 }
 
--(void)dealloc {
-    [action release];
-    [super dealloc];
-}
 
 +(id)item
 {
-    return [[[RIButtonItem alloc] init] autorelease];
+    return [[RIButtonItem alloc] init];
 }
 
 +(id)itemWithLabel:(NSString *)inLabel
 {
-    id newItem = [[[RIButtonItem alloc] initWithLabel:inLabel] autorelease];
+    id newItem = [[RIButtonItem alloc] initWithLabel:inLabel];
     return newItem;
 }
 
